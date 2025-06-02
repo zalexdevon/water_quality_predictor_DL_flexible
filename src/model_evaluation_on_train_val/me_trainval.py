@@ -1,4 +1,4 @@
-from Mylib import myfuncs, myclasses, tf_myclasses
+from Mylib import myfuncs, myclasses, tf_myclasses, tf_model_evaluator
 import os
 import tensorflow as tf
 
@@ -21,7 +21,7 @@ def evaluate_model_on_train_val(
 
     # Đánh giá model trên tập train, val
     model_results_text, train_confusion_matrix, val_confusion_matrix = (
-        tf_myclasses.ClassifierEvaluator(
+        tf_model_evaluator.ClassifierEvaluator(
             model=model,
             class_names=class_names,
             train_ds=train_ds,

@@ -12,7 +12,7 @@ class TransformerOnTrainAndTest(BaseEstimator, TransformerMixin):
         super().__init__()
 
     def fit(self, X, y=None):
-
+        self.is_fitted_ = True
         return self
 
     def transform(self, X, y=None):
@@ -40,6 +40,7 @@ class TransformerOnTrain(BaseEstimator, TransformerMixin):
         ]
         df[cols] = 0
 
+        self.is_fitted_ = True
         return df
 
     def transform(self, X, y=None):
